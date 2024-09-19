@@ -1,0 +1,53 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.4.RELEASE)
+
+2023-12-17 13:09:53.047  INFO 25552 --- [           main] c.s.bioMedical.BioMedicalApplication     : Starting BioMedicalApplication v0.0.2-SNAPSHOT on DESKTOP-M100L4F with PID 25552 (C:\Users\kserg\devops-lab\code-practice\geo\target\bioMedical-0.0.2-SNAPSHOT.jar started by kserg in C:\Users\kserg\devops-lab\code-practice\geo)
+2023-12-17 13:09:53.050  INFO 25552 --- [           main] c.s.bioMedical.BioMedicalApplication     : No active profile set, falling back to default profiles: default
+2023-12-17 13:09:53.637  INFO 25552 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-17 13:09:53.715  INFO 25552 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71ms. Found 3 JPA repository interfaces.
+2023-12-17 13:09:54.035  INFO 25552 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2023-12-17 13:09:54.331  INFO 25552 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2023-12-17 13:09:54.339  INFO 25552 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-17 13:09:54.340  INFO 25552 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2023-12-17 13:09:54.392  INFO 25552 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-17 13:09:54.392 DEBUG 25552 --- [           main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2023-12-17 13:09:54.393  INFO 25552 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1278 ms
+2023-12-17 13:09:54.433  INFO 25552 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-17 13:09:54.590  INFO 25552 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-17 13:09:54.621  INFO 25552 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:mem:userauth'
+Hibernate: create table app (id integer not null, date varchar(255), description varchar(255), email varchar(255), name varchar(255) not null, regtime varchar(255), time varchar(255), primary key (id))
+Hibernate: alter table app drop constraint if exists UK_88vfgccvckwwip06k7tpf8uk3
+Hibernate: alter table app add constraint UK_88vfgccvckwwip06k7tpf8uk3 unique (name)
+Hibernate: create sequence hibernate_sequence start with 1 increment by 1
+2023-12-17 13:09:55.396  INFO 25552 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-17 13:09:55.699  WARN 25552 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-17 13:09:55.821  INFO 25552 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/resources/**'], []
+2023-12-17 13:09:55.821  INFO 25552 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/login/**'], []
+2023-12-17 13:09:55.821  INFO 25552 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/static/**'], []
+2023-12-17 13:09:55.821  INFO 25552 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/Script/**'], []
+2023-12-17 13:09:55.821  INFO 25552 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/Style/**'], []
+2023-12-17 13:09:55.821  INFO 25552 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/Icon/**'], []
+2023-12-17 13:09:55.821  INFO 25552 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/js/**'], []
+2023-12-17 13:09:55.821  INFO 25552 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/vendor/**'], []
+2023-12-17 13:09:55.821  INFO 25552 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/bootstrap/**'], []
+2023-12-17 13:09:55.821  INFO 25552 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/Image/**'], []
+2023-12-17 13:09:55.843  INFO 25552 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@150ede8b, org.springframework.security.web.context.SecurityContextPersistenceFilter@38fc5554, org.springframework.security.web.header.HeaderWriterFilter@2caa5d7c, org.springframework.security.web.csrf.CsrfFilter@6c42f2a1, org.springframework.security.web.authentication.logout.LogoutFilter@5477a1ca, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4d8286c4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3f049056, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4d1f1ff5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@161f6623, org.springframework.security.web.session.SessionManagementFilter@3eabe84a, org.springframework.security.web.access.ExceptionTranslationFilter@5fe7f967, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@790a251b]
+2023-12-17 13:09:55.852  INFO 25552 --- [           main] o.s.s.p.JdbcUserDetailsManager           : No authentication manager set. Reauthentication of users when changing passwords will not be performed.
+2023-12-17 13:09:55.963  INFO 25552 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2023-12-17 13:09:55.968 DEBUG 25552 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-12-17 13:09:56.011 DEBUG 25552 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 27 mappings in 'requestMappingHandlerMapping'
+2023-12-17 13:09:56.034 DEBUG 25552 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2023-12-17 13:09:56.040 DEBUG 25552 --- [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-12-17 13:09:56.063  WARN 25552 --- [           main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2023-12-17 13:09:56.156  INFO 25552 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2023-12-17 13:09:56.158  INFO 25552 --- [           main] c.s.bioMedical.BioMedicalApplication     : Started BioMedicalApplication in 3.436 seconds (JVM running for 3.795)
+2023-12-17 13:10:08.919  INFO 25552 --- [extShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2023-12-17 13:10:08.920  INFO 25552 --- [extShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-17 13:10:08.921  INFO 25552 --- [extShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-17 13:10:08.922  INFO 25552 --- [extShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

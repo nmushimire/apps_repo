@@ -1,0 +1,44 @@
+pipeline{
+     agent any
+     tools{
+     maven 'M2_HOME'
+     }
+     
+     stages{
+     stage('sonar-scan'){
+        steps{
+             withSonarQubeEnv('sonarQube'){
+             sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=gad0788_geo-app'
+             }
+        }
+        }
+       stage('maven1'){
+           steps{
+           sh 'mvn clean validate compile install test package'
+           }
+       }
+       stage('upload artifact'){
+            steps{
+            sh 'curl -uadmin:AP3yQAuEtNW52NMLC1yXozr4nbt -T \
+            target/bioMedical-0.0.3-SNAPSHOT.jar "http://ec2-34-224-1-229.compute-1.amazonaws.com:8081/artifactory/geolocation/geo/bio_${BUILD_ID}.jar"'
+            }
+       }
+       stage('docker login'){
+          steps{
+          sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 257070983248.dkr.ecr.us-east-1.amazonaws.com'
+          }
+       }
+       stage('docker build'){
+           steps{
+           sh 'docker build -t utc-app-qa .'
+           sh 'docker tag utc-app-qa:latest 257070983248.dkr.ecr.us-east-1.amazonaws.com/utc-app-qa:v.${BUILD_ID}'   
+       }
+       }
+       stage('image deploy'){
+        steps{
+        sh 'docker push 257070983248.dkr.ecr.us-east-1.amazonaws.com/utc-app-qa:v.${BUILD_ID}'
+        }
+       }
+     
+     }
+}
